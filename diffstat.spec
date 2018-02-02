@@ -4,7 +4,7 @@
 #
 Name     : diffstat
 Version  : 1.61
-Release  : 4
+Release  : 5
 URL      : ftp://invisible-island.net/diffstat/diffstat-1.61.tgz
 Source0  : ftp://invisible-island.net/diffstat/diffstat-1.61.tgz
 Summary  : diffstat - make histogram from diff-output
