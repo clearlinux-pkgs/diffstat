@@ -1,5 +1,5 @@
 PKG_NAME := diffstat
-URL := ftp://invisible-island.net/diffstat/diffstat-1.61.tgz
-ARCHIVES :=
+URL = https://invisible-mirror.net/archives/diffstat/diffstat-1.61.tgz
+ARCHIVES = 
 
 include ../common/Makefile.common

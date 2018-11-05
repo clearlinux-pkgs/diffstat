@@ -1,0 +1,22 @@
+Configure miss: tdlint
+Configure miss: lint
+Configure miss: alint
+Configure miss: splint
+Configure miss: lclint
+Configure miss: exctags
+Configure miss: ctags
+Configure miss: exetags
+Configure miss: ctags
+Configure miss: install-prefix
+Configure miss: compress
+Configure miss: compress
+Configure miss: pcat
+Configure miss: pcat
+Configure miss: uncompress.real
+Configure miss: uncompress.real
+Configure miss: if you want to check for gcc warnings
+Configure miss: if we should define _REENTRANT
+Configure miss: if you want to use dmalloc for testing
+Configure miss: if you want to use dbmalloc for testing
+Configure miss: if you want to use valgrind for testing
+Configure miss: if you want to perform memory-leak testing
