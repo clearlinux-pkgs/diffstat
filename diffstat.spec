@@ -5,17 +5,18 @@
 # Source0 file verified with key 0x702353E0F7E48EDB (dickey@invisible-island.net)
 #
 Name     : diffstat
-Version  : 1.61
-Release  : 7
-URL      : https://invisible-mirror.net/archives/diffstat/diffstat-1.61.tgz
-Source0  : https://invisible-mirror.net/archives/diffstat/diffstat-1.61.tgz
-Source99 : https://invisible-mirror.net/archives/diffstat/diffstat-1.61.tgz.asc
+Version  : 1.62
+Release  : 8
+URL      : https://invisible-mirror.net/archives/diffstat/diffstat-1.62.tgz
+Source0  : https://invisible-mirror.net/archives/diffstat/diffstat-1.62.tgz
+Source99 : https://invisible-mirror.net/archives/diffstat/diffstat-1.62.tgz.asc
 Summary  : diffstat - make histogram from diff-output
 Group    : Development/Tools
 License  : HPND ICU MIT
 Requires: diffstat-bin = %{version}-%{release}
 Requires: diffstat-license = %{version}-%{release}
 Requires: diffstat-man = %{version}-%{release}
+BuildRequires : cppcheck
 BuildRequires : groff
 
 %description
@@ -50,19 +51,19 @@ man components for the diffstat package.
 
 
 %prep
-%setup -q -n diffstat-1.61
+%setup -q -n diffstat-1.62
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1541398198
+export SOURCE_DATE_EPOCH=1542069344
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1541398198
+export SOURCE_DATE_EPOCH=1542069344
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/diffstat
 cp COPYING %{buildroot}/usr/share/package-licenses/diffstat/COPYING
