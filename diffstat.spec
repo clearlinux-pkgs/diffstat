@@ -6,17 +6,18 @@
 #
 Name     : diffstat
 Version  : 1.62
-Release  : 8
+Release  : 9
 URL      : https://invisible-mirror.net/archives/diffstat/diffstat-1.62.tgz
 Source0  : https://invisible-mirror.net/archives/diffstat/diffstat-1.62.tgz
 Source99 : https://invisible-mirror.net/archives/diffstat/diffstat-1.62.tgz.asc
-Summary  : diffstat - make histogram from diff-output
+Summary  : Display a histogram of diff changes
 Group    : Development/Tools
 License  : HPND ICU MIT
 Requires: diffstat-bin = %{version}-%{release}
 Requires: diffstat-license = %{version}-%{release}
 Requires: diffstat-man = %{version}-%{release}
 BuildRequires : cppcheck
+BuildRequires : ctags
 BuildRequires : groff
 
 %description
@@ -28,7 +29,6 @@ of the total lines changed for each file referenced.
 Summary: bin components for the diffstat package.
 Group: Binaries
 Requires: diffstat-license = %{version}-%{release}
-Requires: diffstat-man = %{version}-%{release}
 
 %description bin
 bin components for the diffstat package.
@@ -58,12 +58,19 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1542069344
+export SOURCE_DATE_EPOCH=1557076413
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1542069344
+export SOURCE_DATE_EPOCH=1557076413
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/diffstat
 cp COPYING %{buildroot}/usr/share/package-licenses/diffstat/COPYING
