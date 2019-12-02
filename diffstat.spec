@@ -5,12 +5,12 @@
 # Source0 file verified with key 0x702353E0F7E48EDB (dickey@invisible-island.net)
 #
 Name     : diffstat
-Version  : 1.62
-Release  : 9
-URL      : https://invisible-mirror.net/archives/diffstat/diffstat-1.62.tgz
-Source0  : https://invisible-mirror.net/archives/diffstat/diffstat-1.62.tgz
-Source99 : https://invisible-mirror.net/archives/diffstat/diffstat-1.62.tgz.asc
-Summary  : Display a histogram of diff changes
+Version  : 1.63
+Release  : 10
+URL      : https://invisible-mirror.net/archives/diffstat/diffstat-1.63.tgz
+Source0  : https://invisible-mirror.net/archives/diffstat/diffstat-1.63.tgz
+Source1 : https://invisible-mirror.net/archives/diffstat/diffstat-1.63.tgz.asc
+Summary  : diffstat - make histogram from diff-output
 Group    : Development/Tools
 License  : HPND ICU MIT
 Requires: diffstat-bin = %{version}-%{release}
@@ -51,14 +51,16 @@ man components for the diffstat package.
 
 
 %prep
-%setup -q -n diffstat-1.62
+%setup -q -n diffstat-1.63
+cd %{_builddir}/diffstat-1.63
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1557076413
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1575329293
+export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
@@ -70,11 +72,11 @@ export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1557076413
+export SOURCE_DATE_EPOCH=1575329293
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/diffstat
-cp COPYING %{buildroot}/usr/share/package-licenses/diffstat/COPYING
-cp package/debian/copyright %{buildroot}/usr/share/package-licenses/diffstat/package_debian_copyright
+cp %{_builddir}/diffstat-1.63/COPYING %{buildroot}/usr/share/package-licenses/diffstat/92d8347e8f891ad54727eb829efeb009804778ce
+cp %{_builddir}/diffstat-1.63/package/debian/copyright %{buildroot}/usr/share/package-licenses/diffstat/98852db66a19300e840d8a1c78e50e85ffebc3fa
 %make_install
 
 %files
@@ -86,8 +88,8 @@ cp package/debian/copyright %{buildroot}/usr/share/package-licenses/diffstat/pac
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/diffstat/COPYING
-/usr/share/package-licenses/diffstat/package_debian_copyright
+/usr/share/package-licenses/diffstat/92d8347e8f891ad54727eb829efeb009804778ce
+/usr/share/package-licenses/diffstat/98852db66a19300e840d8a1c78e50e85ffebc3fa
 
 %files man
 %defattr(0644,root,root,0755)

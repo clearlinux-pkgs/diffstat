@@ -1,3 +1,5 @@
+Configure miss: if this is really Intel C compiler
+Configure miss: if this is really Clang C compiler
 Configure miss: lint
 Configure miss: exctags
 Configure miss: exetags
@@ -8,8 +10,10 @@ Configure miss: pcat
 Configure miss: pcat
 Configure miss: uncompress.real
 Configure miss: uncompress.real
+Configure miss: if the POSIX test-macros are already defined
 Configure miss: if you want to check for gcc warnings
 Configure miss: if we should define _REENTRANT
+Configure miss: ioctl.h
 Configure miss: man2html
 Configure miss: if you want to use dmalloc for testing
 Configure miss: if you want to use dbmalloc for testing
