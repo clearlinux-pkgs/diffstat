@@ -6,10 +6,10 @@
 #
 Name     : diffstat
 Version  : 1.63
-Release  : 10
+Release  : 11
 URL      : https://invisible-mirror.net/archives/diffstat/diffstat-1.63.tgz
 Source0  : https://invisible-mirror.net/archives/diffstat/diffstat-1.63.tgz
-Source1 : https://invisible-mirror.net/archives/diffstat/diffstat-1.63.tgz.asc
+Source1  : https://invisible-mirror.net/archives/diffstat/diffstat-1.63.tgz.asc
 Summary  : diffstat - make histogram from diff-output
 Group    : Development/Tools
 License  : HPND ICU MIT
@@ -59,20 +59,20 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1575329293
+export SOURCE_DATE_EPOCH=1605126064
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static
 make  %{?_smp_mflags}
 
 %install
-export SOURCE_DATE_EPOCH=1575329293
+export SOURCE_DATE_EPOCH=1605126064
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/diffstat
 cp %{_builddir}/diffstat-1.63/COPYING %{buildroot}/usr/share/package-licenses/diffstat/92d8347e8f891ad54727eb829efeb009804778ce
