@@ -11,6 +11,7 @@ Configure miss: pcat
 Configure miss: uncompress.real
 Configure miss: uncompress.real
 Configure miss: if the POSIX test-macros are already defined
+Configure miss: ggrep
 Configure miss: if you want to check for gcc warnings
 Configure miss: if we should define _REENTRANT
 Configure miss: ioctl.h
